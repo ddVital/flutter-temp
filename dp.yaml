@@ -1,0 +1,5 @@
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^1.7.0
+  cloud_firestore: ^2.6.0
