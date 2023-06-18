@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "163389250085",
+    "project_id": "japas-35443",
+    "storage_bucket": "japas-35443.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163389250085:android:8c11cc18f976594ff63dcc",
+        "android_client_info": {
+          "package_name": "com.JAPAS.ORDER"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163389250085-4vv94aqgbvfm6bs2qm450ljargcllr84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnrUOXeCMO6YuUrg65ZgsivpBalPkR44U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163389250085-4vv94aqgbvfm6bs2qm450ljargcllr84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
