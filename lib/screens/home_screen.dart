@@ -1,38 +1,49 @@
+import 'package:fast_food_app/screens/payment_screen.dart';
 import 'package:flutter/material.dart';
 import '../data/database.dart';
 // import '../models/restaurant_model.dart';
-import '../models/restaurant.dart';
+import '../models/pratos.dart';
+import '../models/cart.dart';
 import './order_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  final List<Restaurant> restaurants = [
-    Restaurant(
-      name: 'Restaurant A',
-      description: 'Description of Restaurant A',
+  final List<Pratos> pratos = [
+    Pratos(
+      name: 'Prato A',
+      description: 'Description of Prato A',
+      img: "",
+      preco: 23,
     ),
-    Restaurant(
-      name: 'Restaurant B',
-      description: 'Description of Restaurant B',
+    Pratos(
+      name: 'Prato B',
+      description: 'Description of Prato B',
+      img: "",
+      preco: 23,
     ),
-    Restaurant(
-      name: 'Restaurant C',
-      description: 'Description of Restaurant C',
+    Pratos(
+      name: 'Prato C',
+      description: 'Description of Prato C',
+      img: "",
+      preco: 23,
     ),
   ];
+
+  final List<Cart> carrinho = [];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Restaurant App',
-      home: HomePage(restaurants: restaurants),
+      title: 'FastFood',
+      home: HomePage(pratos: pratos, carrinho: carrinho,),
     );
   }
 }
 
 class HomePage extends StatelessWidget {
-  final List<Restaurant> restaurants;
+  final List<Pratos> pratos;
+  final List<Cart> carrinho;
 
-  const HomePage({required this.restaurants});
+  const HomePage({required this.pratos, required this.carrinho});
 
   @override
   Widget build(BuildContext context) {
@@ -41,22 +52,50 @@ class HomePage extends StatelessWidget {
         title: const Text("JAPA's App"),
       ),
       body: ListView.builder(
-        itemCount: restaurants.length,
+        itemCount: pratos.length,
         itemBuilder: (context, index) {
-          final restaurant = restaurants[index];
+          final prato = pratos[index];
+          final name = prato.name;
           return ListTile(
-            title: Text(restaurant.name),
-            subtitle: Text(restaurant.description),
+            title: Text(name),
+            subtitle: Text(prato.description),
             trailing: IconButton(
-              icon: const Icon(Icons.arrow_forward),
+              icon: const Icon(Icons.add),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => OrderScreen(),
-                  ),
-                );
+                // int precoTotal = 0;
+                // pratos.forEach((element) => precoTotal += element.preco);
+                int precoTotal = pratos[index].preco;
+                carrinho.add(Cart(produtos: [name], precoTotal: precoTotal));
+                carrinho.forEach((element) => print(element.produtos));
+                print(carrinho.length);
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => OrderScreen(name: prato.name),
+                //   ),
+                // );
               },
+            ),
+            
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.payment),
+        onPressed: () {
+          int precoTotal = 0;
+          List produtos = [];
+
+          carrinho.forEach((element) => produtos = [element.produtos]);
+          carrinho.forEach((element) => precoTotal += element.precoTotal);
+          
+          print(pratos);
+          print(precoTotal);
+
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PaymentScreen(produtos: pratos, precoTotal: precoTotal),
             ),
           );
         },
