@@ -13,6 +13,7 @@ class OrderScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Fazer Pedido'),
+        backgroundColor: Colors.lightGreen,
       ),
       body: Text(name),
       // body: const Column(

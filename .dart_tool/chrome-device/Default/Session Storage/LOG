@@ -1,3 +1,12 @@
-2023/06/18-20:06:19.479 2ca4 Reusing MANIFEST C:\Users\joaoz\AppData\Local\Temp\flutter_tools.1d781f8b\flutter_tools_chrome_device.f52f00e8\Default\Session Storage/MANIFEST-000001
-2023/06/18-20:06:19.481 2ca4 Recovering log #3
-2023/06/18-20:06:19.483 2ca4 Reusing old log C:\Users\joaoz\AppData\Local\Temp\flutter_tools.1d781f8b\flutter_tools_chrome_device.f52f00e8\Default\Session Storage/000003.log 
+2023/06/19-15:47:00.951 2efc Reusing MANIFEST C:\Users\joaoz\AppData\Local\Temp\flutter_tools.28fc515b\flutter_tools_chrome_device.3aebc8c0\Default\Session Storage/MANIFEST-000001
+2023/06/19-15:47:00.952 2efc Recovering log #3
+2023/06/19-15:47:00.954 2efc Reusing old log C:\Users\joaoz\AppData\Local\Temp\flutter_tools.28fc515b\flutter_tools_chrome_device.3aebc8c0\Default\Session Storage/000003.log 
+2023/06/19-15:49:50.350 2efc Level-0 table #5: started
+2023/06/19-15:49:50.358 2efc Level-0 table #5: 24162 bytes OK
+2023/06/19-15:49:50.361 2efc Delete type=0 #3
+2023/06/19-15:59:40.904 35a8 Level-0 table #7: started
+2023/06/19-15:59:40.918 35a8 Level-0 table #7: 551289 bytes OK
+2023/06/19-15:59:40.922 35a8 Delete type=0 #4
+2023/06/19-16:07:01.487 35a8 Level-0 table #9: started
+2023/06/19-16:07:01.504 35a8 Level-0 table #9: 1105073 bytes OK
+2023/06/19-16:07:01.508 35a8 Delete type=0 #6

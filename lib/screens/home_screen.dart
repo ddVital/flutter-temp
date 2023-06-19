@@ -11,19 +11,19 @@ class HomeScreen extends StatelessWidget {
     Pratos(
       name: 'Prato A',
       description: 'Description of Prato A',
-      img: "",
+      img: "https://th.bing.com/th/id/R.7aa43b384e5953db75e44c8936b65c07?rik=tdE5q1pLqbqNUA&pid=ImgRaw&r=0",
       preco: 23,
     ),
     Pratos(
       name: 'Prato B',
       description: 'Description of Prato B',
-      img: "",
+      img: "https://th.bing.com/th/id/R.f42033cd2bac51042f4f7ee54a590f38?rik=r8YbOHQ7amIOqA&pid=ImgRaw&r=0",
       preco: 23,
     ),
     Pratos(
       name: 'Prato C',
       description: 'Description of Prato C',
-      img: "",
+      img: "https://th.bing.com/th/id/OIP.RRVEgqQwCtxRjAtXn5RyowHaHa?pid=ImgDet&rs=1",
       preco: 23,
     ),
   ];
@@ -44,49 +44,61 @@ class HomePage extends StatelessWidget {
   final List<Cart> carrinho;
 
   const HomePage({required this.pratos, required this.carrinho});
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("JAPA's App"),
+        backgroundColor: Colors.lightGreen,
       ),
       body: ListView.builder(
         itemCount: pratos.length,
         itemBuilder: (context, index) {
           final prato = pratos[index];
           final name = prato.name;
+          int precoTotal = 0;
           return ListTile(
+            leading: Image.network(prato.img, cacheWidth: 100, cacheHeight: 100,),
             title: Text(name),
             subtitle: Text(prato.description),
-            trailing: IconButton(
-              icon: const Icon(Icons.add),
-              onPressed: () {
-                // int precoTotal = 0;
-                // pratos.forEach((element) => precoTotal += element.preco);
-                int precoTotal = pratos[index].preco;
-                carrinho.add(Cart(produtos: [name], precoTotal: precoTotal));
-                carrinho.forEach((element) => print(element.produtos));
-                print(carrinho.length);
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => OrderScreen(name: prato.name),
-                //   ),
-                // );
-              },
-            ),
-            
-          );
+            trailing: Container(
+                width: 100,
+                child: Row(children: <Widget>[
+                  IconButton(
+                    icon: Icon(Icons.remove),
+                    onPressed: () {
+                      if (precoTotal > 0) {
+                        precoTotal -= pratos[index].preco;
+                      }
+                      print(index);
+
+                      carrinho.removeWhere((item) => item.id == index);
+                      carrinho.forEach((element) => print(element.produtos));
+                      print(carrinho.length);
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.add),
+                    onPressed: () {
+                      precoTotal = pratos[index].preco;
+                      carrinho.add(Cart(id: index, produtos: name, desc: prato.description, precoTotal: precoTotal));
+                      carrinho.forEach((element) => print(element.produtos));
+                      print(carrinho.length);
+                    },
+                  ),
+                ])));
         },
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.payment),
         onPressed: () {
           int precoTotal = 0;
-          List produtos = [];
+          int id = 0;
+          String produtos = '';
 
-          carrinho.forEach((element) => produtos = [element.produtos]);
+          carrinho.forEach((element) => id = element.id);
+          carrinho.forEach((element) => produtos = element.produtos);
           carrinho.forEach((element) => precoTotal += element.precoTotal);
           
           print(pratos);
@@ -95,7 +107,7 @@ class HomePage extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => PaymentScreen(produtos: pratos, precoTotal: precoTotal),
+              builder: (context) => PaymentScreen(carrinho: carrinho, id: id, produtos: produtos, precoTotal: precoTotal),
             ),
           );
         },
@@ -103,72 +115,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-// class HomeScreen extends StatelessWidget {
-//   final List<Restaurant> restaurants = [
-//     Restaurant(
-//       name: 'Restaurant A',
-//       description: 'Description of Restaurant A',
-//     ),
-//     Restaurant(
-//       name: 'Restaurant B',
-//       description: 'Description of Restaurant B',
-//     ),
-//     Restaurant(
-//       name: 'Restaurant C',
-//       description: 'Description of Restaurant C',
-//     ),
-//   ];
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return FutureBuilder<List<Restaurant>>(
-//       // future: Database.getAllRestaurants(),
-//       builder: (context, snapshot) {
-//         if (snapshot.hasData) {
-//           final restaurants = snapshot.data;
-
-//           // Exiba os restaurantes na interface do usuário (por exemplo, ListView, GridView, etc.)
-//           return ListView.builder(
-//             itemCount: restaurants!.length,
-//             itemBuilder: (context, index) {
-//               final restaurant = restaurants[index];
-//               return ListTile(
-//                 title: Text(restaurant.name),
-//                 subtitle: Text(restaurant.rate as String),
-//               );
-//             },
-//           );
-//         } else if (snapshot.hasError) {
-//           return const Text('Erro ao carregar os restaurantes');
-//         }
-
-//         return const CircularProgressIndicator();
-//       },
-//     );
-//   }
-// }
-// import 'package:flutter/material.dart';
-// import 'package:fast_food_app/screens/order_screen.dart';
-
-// class HomeScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Home'),
-//       ),
-//       body: Center(
-//         child: ElevatedButton(
-//           child: const Text('Fazer Pedido'),
-//           onPressed: () {
-//             Navigator.push(
-//               context,
-//               MaterialPageRoute(builder: (context) => OrderScreen()),
-//             );
-//           },
-//         ),
-//       ),
-//     );
-//   }
-// }

@@ -5,37 +5,43 @@ import '../models/cart.dart';
 
 class PaymentScreen extends StatelessWidget {
   final int precoTotal;
-  final List produtos;
+  late int id;
+  final String produtos;
+  final List carrinho;
+  late String preco;
 
-  const PaymentScreen({required this.produtos, required this.precoTotal});
+  PaymentScreen({required this.carrinho, required this.id, required this.produtos, required this.precoTotal});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pagamento'),
+        backgroundColor: Colors.lightGreen,
+        title: Text('Pagamento total R\$ $precoTotal'),
       ),
-      body: Text(precoTotal.toString()),
-    //   body: Column(
-    //     children: produtos.map<Widget>((e) => Text(e['produtos'])).toList()
-    //     ..addAll([
-    //         Container() //You can use addAll method and add some juicy widgets
-    // ]),
-      // ),
       
-      // body: const Column(
-      //   children:  [
-      //     Text(precoTotal.toString()),
-      //     // Lógica para exibir as opções de pagamento
-      //     // Formulário para preenchimento dos dados de pagamento
-      //   ],
-      // ),
+      body: ListView.builder(
+        itemCount: carrinho.length,
+        itemBuilder: (context, index) {
+          carrinho.forEach((item) => print(item.id));
+          preco = carrinho[index].precoTotal.toString();
+
+          return ListTile(
+            title: Text(carrinho[index].produtos.toString()),
+            subtitle: Text(carrinho[index].desc.toString()),
+            trailing: Container(
+                width: 100,
+                child: Row(children: <Widget>[
+                  Text("R\$ $preco")
+          ])));
+        },
+      ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.arrow_forward),
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => FineshedScreen()),
+            MaterialPageRoute(builder: (context) => FineshedScreen(carrinho: carrinho)),
           );
         },
       ),
