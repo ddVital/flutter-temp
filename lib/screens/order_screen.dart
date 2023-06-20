@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fast_food_app/screens/payment_screen.dart';
-import '../models/pratos.dart';
+//import 'package:fast_food_app/screens/payment_screen.dart';
+//import '../models/pratos.dart';
 
 class OrderScreen extends StatelessWidget {
   // final List<Restaurant> restaurants;
@@ -19,8 +19,8 @@ class OrderScreen extends StatelessWidget {
       // body: const Column(
       //   children: [
       //     ListTile(name)
-      //     // Lógica para exibir a lista de restaurantes e pratos disponíveis
-      //     // Botões de seleção de restaurante e pratos
+      //     
+      //     
       //   ],
       // ),
       floatingActionButton: FloatingActionButton(

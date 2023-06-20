@@ -1,12 +1,53 @@
-2023/06/19-15:47:00.951 2efc Reusing MANIFEST C:\Users\joaoz\AppData\Local\Temp\flutter_tools.28fc515b\flutter_tools_chrome_device.3aebc8c0\Default\Session Storage/MANIFEST-000001
-2023/06/19-15:47:00.952 2efc Recovering log #3
-2023/06/19-15:47:00.954 2efc Reusing old log C:\Users\joaoz\AppData\Local\Temp\flutter_tools.28fc515b\flutter_tools_chrome_device.3aebc8c0\Default\Session Storage/000003.log 
-2023/06/19-15:49:50.350 2efc Level-0 table #5: started
-2023/06/19-15:49:50.358 2efc Level-0 table #5: 24162 bytes OK
-2023/06/19-15:49:50.361 2efc Delete type=0 #3
-2023/06/19-15:59:40.904 35a8 Level-0 table #7: started
-2023/06/19-15:59:40.918 35a8 Level-0 table #7: 551289 bytes OK
-2023/06/19-15:59:40.922 35a8 Delete type=0 #4
-2023/06/19-16:07:01.487 35a8 Level-0 table #9: started
-2023/06/19-16:07:01.504 35a8 Level-0 table #9: 1105073 bytes OK
-2023/06/19-16:07:01.508 35a8 Delete type=0 #6
+2023/06/20-10:46:06.398 85c Reusing MANIFEST C:\Users\joaoz\AppData\Local\Temp\flutter_tools.f7f1d55f\flutter_tools_chrome_device.e57adf32\Default\Session Storage/MANIFEST-000001
+2023/06/20-10:46:06.419 85c Recovering log #8
+2023/06/20-10:46:06.426 85c Reusing old log C:\Users\joaoz\AppData\Local\Temp\flutter_tools.f7f1d55f\flutter_tools_chrome_device.e57adf32\Default\Session Storage/000008.log 
+2023/06/20-10:46:06.436 85c Delete type=0 #3
+2023/06/20-10:53:24.749 c40 Level-0 table #12: started
+2023/06/20-10:53:24.764 c40 Level-0 table #12: 455394 bytes OK
+2023/06/20-10:53:24.767 c40 Delete type=0 #8
+2023/06/20-10:54:30.029 c40 Level-0 table #14: started
+2023/06/20-10:54:30.041 c40 Level-0 table #14: 421485 bytes OK
+2023/06/20-10:54:30.044 c40 Delete type=0 #11
+2023/06/20-10:54:52.615 c40 Level-0 table #16: started
+2023/06/20-10:54:52.627 c40 Level-0 table #16: 535257 bytes OK
+2023/06/20-10:54:52.628 c40 Delete type=0 #13
+2023/06/20-10:54:52.629 c40 Compacting 4@0 + 1@1 files
+2023/06/20-10:54:52.660 c40 Generated table #17@0: 115 keys, 1396231 bytes
+2023/06/20-10:54:52.660 c40 Compacted 4@0 + 1@1 files => 1396231 bytes
+2023/06/20-10:54:52.661 c40 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/06/20-10:54:52.662 c40 Delete type=2 #7
+2023/06/20-10:54:52.662 c40 Delete type=2 #9
+2023/06/20-10:54:52.662 c40 Delete type=2 #12
+2023/06/20-10:54:52.662 c40 Delete type=2 #14
+2023/06/20-10:54:52.662 c40 Delete type=2 #16
+2023/06/20-10:56:18.554 c40 Level-0 table #19: started
+2023/06/20-10:56:18.566 c40 Level-0 table #19: 471546 bytes OK
+2023/06/20-10:56:18.568 c40 Delete type=0 #15
+2023/06/20-11:01:23.702 c40 Level-0 table #21: started
+2023/06/20-11:01:23.716 c40 Level-0 table #21: 466527 bytes OK
+2023/06/20-11:01:23.719 c40 Delete type=0 #18
+2023/06/20-11:02:06.153 c40 Level-0 table #23: started
+2023/06/20-11:02:06.164 c40 Level-0 table #23: 418106 bytes OK
+2023/06/20-11:02:06.167 c40 Delete type=0 #20
+2023/06/20-11:02:49.115 c40 Level-0 table #25: started
+2023/06/20-11:02:49.126 c40 Level-0 table #25: 438771 bytes OK
+2023/06/20-11:02:49.127 c40 Delete type=0 #22
+2023/06/20-11:02:49.128 c40 Compacting 4@0 + 1@1 files
+2023/06/20-11:02:49.167 c40 Generated table #26@0: 46 keys, 2274626 bytes
+2023/06/20-11:02:49.181 c40 Generated table #27@0: 119 keys, 437418 bytes
+2023/06/20-11:02:49.181 c40 Compacted 4@0 + 1@1 files => 2712044 bytes
+2023/06/20-11:02:49.183 c40 compacted to: files[ 0 2 1 0 0 0 0 ]
+2023/06/20-11:02:49.184 c40 Delete type=2 #17
+2023/06/20-11:02:49.184 c40 Delete type=2 #19
+2023/06/20-11:02:49.184 c40 Delete type=2 #21
+2023/06/20-11:02:49.184 c40 Delete type=2 #23
+2023/06/20-11:02:49.184 c40 Delete type=2 #25
+2023/06/20-11:03:44.663 c40 Level-0 table #29: started
+2023/06/20-11:03:44.677 c40 Level-0 table #29: 457241 bytes OK
+2023/06/20-11:03:44.680 c40 Delete type=0 #24
+2023/06/20-11:04:28.522 85c Level-0 table #31: started
+2023/06/20-11:04:28.535 85c Level-0 table #31: 533020 bytes OK
+2023/06/20-11:04:28.538 85c Delete type=0 #28
+2023/06/20-11:04:41.876 c40 Level-0 table #33: started
+2023/06/20-11:04:41.894 c40 Level-0 table #33: 487897 bytes OK
+2023/06/20-11:04:41.897 c40 Delete type=0 #30
